@@ -76,9 +76,9 @@ var AnalyzeCmd = &cobra.Command{
 		if customAnalysis {
 			config.RunCustomAnalysis()
 		}
-		config.RunAnalysis()
+		config.RunAnalysis() //local with analyzers
 
-		if explain {
+		if explain { //talks to LLM
 			if err := config.GetAIResults(output, anonymize); err != nil {
 				color.Red("Error: %v", err)
 				os.Exit(1)

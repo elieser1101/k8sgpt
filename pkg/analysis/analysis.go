@@ -352,7 +352,7 @@ func (a *Analysis) GetAIResults(output string, anonymize bool) error {
 		if prompt, ok := ai.PromptMap[analysis.Kind]; ok {
 			promptTemplate = prompt
 		}
-		result, err := a.getAIResultForSanitizedFailures(texts, promptTemplate)
+		result, err := a.getAIResultForSanitizedFailures(texts, promptTemplate) //The actual request to the model
 		if err != nil {
 			// FIXME: can we avoid checking if output is json multiple times?
 			//   maybe implement the progress bar better?
